@@ -10,11 +10,11 @@ import UIKit
 class SmallTool: UIView {
 
     @IBOutlet var smallTool: UIView!
-
-    let nibName = "SmallTool"    // xib 이름
     @IBAction func toolDeleteBtnClick(_ sender: Any) {
         print("스몰삭제")
     }
+
+    let nibName = "SmallTool"    // xib 이름
 
         required init?(coder aDecoder: NSCoder) {
             super.init(coder: aDecoder)

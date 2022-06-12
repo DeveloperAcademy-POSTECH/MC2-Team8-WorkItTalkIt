@@ -32,12 +32,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8aS-hR-dfP" customClass="SmallTool" customModule="WorkItTalkIt" customModuleProvider="target">
-                                <rect key="frame" x="136" y="165" width="136" height="136"/>
+                                <rect key="frame" x="69" y="51" width="136" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utg-gV-2oM" customClass="ExtraWideTool" customModule="WorkItTalkIt" customModuleProvider="target">
+                                <rect key="frame" x="69" y="466" width="630" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8EM-mk-Oa8" customClass="ExtraLongTool" customModule="WorkItTalkIt" customModuleProvider="target">
+                                <rect key="frame" x="811" y="59" width="300" height="628"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZI-ah-dVM" customClass="MediumTool" customModule="WorkItTalkIt" customModuleProvider="target">
-                                <rect key="frame" x="536" y="468" width="240" height="128"/>
+                                <rect key="frame" x="69" y="195" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSd-bl-rNq" customClass="KingTool" customModule="WorkItTalkIt" customModuleProvider="target">
+                                <rect key="frame" x="483" y="138" width="628" height="628"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-YH-igY" customClass="LargeTool" customModule="WorkItTalkIt" customModuleProvider="target">
+                                <rect key="frame" x="317" y="51" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>

@@ -17,8 +17,16 @@
 		077616E82852E21A00EB1E97 /* WorkItTalkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */; };
 		077616EA2852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */; };
 		077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 077616F82852E2E600EB1E97 /* .swiftlint.yml */; };
-		7B792E9D285587E6004ECEBE /* mediumTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792E9C285587E6004ECEBE /* mediumTool.swift */; };
+		7B792E9D285587E6004ECEBE /* MediumTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792E9C285587E6004ECEBE /* MediumTool.swift */; };
 		7B792E9F28558805004ECEBE /* MediumTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792E9E28558805004ECEBE /* MediumTool.xib */; };
+		7B792EA12855A953004ECEBE /* LargeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EA02855A953004ECEBE /* LargeTool.swift */; };
+		7B792EA32855A966004ECEBE /* LargeTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EA22855A966004ECEBE /* LargeTool.xib */; };
+		7B792EA52855AE21004ECEBE /* ExtraWideTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EA42855AE21004ECEBE /* ExtraWideTool.swift */; };
+		7B792EA72855AE42004ECEBE /* ExtraWideTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EA62855AE42004ECEBE /* ExtraWideTool.xib */; };
+		7B792EA92855B24B004ECEBE /* ExtraLongTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EA82855B24B004ECEBE /* ExtraLongTool.swift */; };
+		7B792EAB2855B25F004ECEBE /* ExtraLongTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EAA2855B25F004ECEBE /* ExtraLongTool.xib */; };
+		7B792EB12855C23C004ECEBE /* KingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EB02855C23C004ECEBE /* KingTool.swift */; };
+		7B792EB32855C247004ECEBE /* KingTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EB22855C247004ECEBE /* KingTool.xib */; };
 		7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363DD2854C654007FA220 /* AllSizeToolView.swift */; };
 		7BDF88EA2854C9EC00FE49B3 /* SmallTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF88E92854C9EC00FE49B3 /* SmallTool.swift */; };
 		7BDF88EC2854CA1C00FE49B3 /* SmallTool.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDF88EB2854CA1C00FE49B3 /* SmallTool.xib */; };
@@ -56,8 +64,16 @@
 		077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITests.swift; sourceTree = "<group>"; };
 		077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		077616F82852E2E600EB1E97 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		7B792E9C285587E6004ECEBE /* mediumTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediumTool.swift; sourceTree = "<group>"; };
+		7B792E9C285587E6004ECEBE /* MediumTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTool.swift; sourceTree = "<group>"; };
 		7B792E9E28558805004ECEBE /* MediumTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediumTool.xib; sourceTree = "<group>"; };
+		7B792EA02855A953004ECEBE /* LargeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTool.swift; sourceTree = "<group>"; };
+		7B792EA22855A966004ECEBE /* LargeTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeTool.xib; sourceTree = "<group>"; };
+		7B792EA42855AE21004ECEBE /* ExtraWideTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraWideTool.swift; sourceTree = "<group>"; };
+		7B792EA62855AE42004ECEBE /* ExtraWideTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraWideTool.xib; sourceTree = "<group>"; };
+		7B792EA82855B24B004ECEBE /* ExtraLongTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraLongTool.swift; sourceTree = "<group>"; };
+		7B792EAA2855B25F004ECEBE /* ExtraLongTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraLongTool.xib; sourceTree = "<group>"; };
+		7B792EB02855C23C004ECEBE /* KingTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingTool.swift; sourceTree = "<group>"; };
+		7B792EB22855C247004ECEBE /* KingTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KingTool.xib; sourceTree = "<group>"; };
 		7B9363DD2854C654007FA220 /* AllSizeToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSizeToolView.swift; sourceTree = "<group>"; };
 		7BDF88E92854C9EC00FE49B3 /* SmallTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTool.swift; sourceTree = "<group>"; };
 		7BDF88EB2854CA1C00FE49B3 /* SmallTool.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallTool.xib; sourceTree = "<group>"; };
@@ -147,8 +163,16 @@
 			children = (
 				7BDF88E92854C9EC00FE49B3 /* SmallTool.swift */,
 				7BDF88EB2854CA1C00FE49B3 /* SmallTool.xib */,
-				7B792E9C285587E6004ECEBE /* mediumTool.swift */,
+				7B792E9C285587E6004ECEBE /* MediumTool.swift */,
 				7B792E9E28558805004ECEBE /* MediumTool.xib */,
+				7B792EA02855A953004ECEBE /* LargeTool.swift */,
+				7B792EA22855A966004ECEBE /* LargeTool.xib */,
+				7B792EA42855AE21004ECEBE /* ExtraWideTool.swift */,
+				7B792EA62855AE42004ECEBE /* ExtraWideTool.xib */,
+				7B792EA82855B24B004ECEBE /* ExtraLongTool.swift */,
+				7B792EAA2855B25F004ECEBE /* ExtraLongTool.xib */,
+				7B792EB02855C23C004ECEBE /* KingTool.swift */,
+				7B792EB22855C247004ECEBE /* KingTool.xib */,
 			);
 			path = ToolSize;
 			sourceTree = "<group>";
@@ -258,10 +282,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B792EB32855C247004ECEBE /* KingTool.xib in Resources */,
+				7B792EAB2855B25F004ECEBE /* ExtraLongTool.xib in Resources */,
 				077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */,
 				077616D32852E21A00EB1E97 /* LaunchScreen.storyboard in Resources */,
 				7B792E9F28558805004ECEBE /* MediumTool.xib in Resources */,
 				7BDF88EC2854CA1C00FE49B3 /* SmallTool.xib in Resources */,
+				7B792EA32855A966004ECEBE /* LargeTool.xib in Resources */,
+				7B792EA72855AE42004ECEBE /* ExtraWideTool.xib in Resources */,
 				077616D02852E21A00EB1E97 /* Assets.xcassets in Resources */,
 				077616CE2852E21900EB1E97 /* Main.storyboard in Resources */,
 			);
@@ -308,11 +336,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B792E9D285587E6004ECEBE /* mediumTool.swift in Sources */,
+				7B792E9D285587E6004ECEBE /* MediumTool.swift in Sources */,
+				7B792EA52855AE21004ECEBE /* ExtraWideTool.swift in Sources */,
 				7BDF88EA2854C9EC00FE49B3 /* SmallTool.swift in Sources */,
+				7B792EA12855A953004ECEBE /* LargeTool.swift in Sources */,
 				077616CB2852E21900EB1E97 /* ViewController.swift in Sources */,
 				077616C72852E21900EB1E97 /* AppDelegate.swift in Sources */,
+				7B792EA92855B24B004ECEBE /* ExtraLongTool.swift in Sources */,
 				7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */,
+				7B792EB12855C23C004ECEBE /* KingTool.swift in Sources */,
 				077616C92852E21900EB1E97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
