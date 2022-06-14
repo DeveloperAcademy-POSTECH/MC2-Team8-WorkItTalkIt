@@ -17,6 +17,10 @@
 		077616E82852E21A00EB1E97 /* WorkItTalkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */; };
 		077616EA2852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */; };
 		077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 077616F82852E2E600EB1E97 /* .swiftlint.yml */; };
+		0776184028582DC000EB1E97 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776183F28582DC000EB1E97 /* GridViewController.swift */; };
+		0776184228582E1B00EB1E97 /* GridSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776184128582E1B00EB1E97 /* GridSystem.swift */; };
+		0776184428582E5B00EB1E97 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776184328582E5B00EB1E97 /* Tool.swift */; };
+		0776184628582E8200EB1E97 /* CGPoint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776184528582E8200EB1E97 /* CGPoint+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITests.swift; sourceTree = "<group>"; };
 		077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		077616F82852E2E600EB1E97 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0776183F28582DC000EB1E97 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		0776184128582E1B00EB1E97 /* GridSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSystem.swift; sourceTree = "<group>"; };
+		0776184328582E5B00EB1E97 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		0776184528582E8200EB1E97 /* CGPoint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 		077616C52852E21900EB1E97 /* WorkItTalkIt */ = {
 			isa = PBXGroup;
 			children = (
+				0776183E28582D7E00EB1E97 /* Grid */,
 				077616C62852E21900EB1E97 /* AppDelegate.swift */,
 				077616C82852E21900EB1E97 /* SceneDelegate.swift */,
 				077616CA2852E21900EB1E97 /* ViewController.swift */,
@@ -128,6 +137,17 @@
 				077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */,
 			);
 			path = WorkItTalkItUITests;
+			sourceTree = "<group>";
+		};
+		0776183E28582D7E00EB1E97 /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				0776183F28582DC000EB1E97 /* GridViewController.swift */,
+				0776184128582E1B00EB1E97 /* GridSystem.swift */,
+				0776184328582E5B00EB1E97 /* Tool.swift */,
+				0776184528582E8200EB1E97 /* CGPoint+.swift */,
+			);
+			path = Grid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint #autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -283,9 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0776184028582DC000EB1E97 /* GridViewController.swift in Sources */,
 				077616CB2852E21900EB1E97 /* ViewController.swift in Sources */,
 				077616C72852E21900EB1E97 /* AppDelegate.swift in Sources */,
+				0776184428582E5B00EB1E97 /* Tool.swift in Sources */,
+				0776184628582E8200EB1E97 /* CGPoint+.swift in Sources */,
 				077616C92852E21900EB1E97 /* SceneDelegate.swift in Sources */,
+				0776184228582E1B00EB1E97 /* GridSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
