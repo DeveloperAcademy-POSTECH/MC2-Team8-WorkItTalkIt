@@ -11,7 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToolView" customModule="WorkItTalkIt" customModuleProvider="target">
             <connections>
-                <outlet property="tool" destination="XyT-yB-k1P" id="RSo-la-LNI"/>
+                <outlet property="tool" destination="iN0-l3-epB" id="9B3-P4-k7T"/>
+                <outlet property="toolDeleteBtn" destination="l1j-ES-Yck" id="0t9-rI-4Ga"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,43 +20,43 @@
             <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XyT-yB-k1P">
-                    <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1j-ES-Yck">
-                            <rect key="frame" x="-8" y="-8" width="24" height="24"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="">
-                                <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
-                                <color key="baseForegroundColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
-                            </buttonConfiguration>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="12"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="toolDeleteBtn:" destination="-1" eventType="touchUpInside" id="M3i-hX-8EX"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1j-ES-Yck">
+                    <rect key="frame" x="-8" y="-8" width="24" height="24"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="3Kk-v1-jBG"/>
+                        <constraint firstAttribute="height" constant="24" id="deV-AU-nu8"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="">
+                        <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
+                        <color key="baseForegroundColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                    </buttonConfiguration>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="12"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
-                </view>
+                    <connections>
+                        <action selector="toolDeleteBtnClick:" destination="-1" eventType="touchUpInside" id="6Xb-cy-Ymd"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="l1j-ES-Yck" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-8" id="9oz-UH-nW0"/>
+                <constraint firstItem="l1j-ES-Yck" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-8" id="m9D-ai-VfH"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="190" y="40"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="12"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="189.85507246376812" y="39.508928571428569"/>
         </view>
     </objects>
     <resources>

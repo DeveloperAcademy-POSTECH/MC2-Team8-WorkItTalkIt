@@ -7,7 +7,8 @@
 
 import UIKit
 
-class AllSizeToolView: UIViewController {
+final class AllSizeToolView: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
