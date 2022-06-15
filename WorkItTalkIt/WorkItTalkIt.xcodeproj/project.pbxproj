@@ -17,6 +17,8 @@
 		077616E82852E21A00EB1E97 /* WorkItTalkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */; };
 		077616EA2852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */; };
 		077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 077616F82852E2E600EB1E97 /* .swiftlint.yml */; };
+		A0E478F828561BD00079AAEF /* FirstScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0E478F728561BD00079AAEF /* FirstScreen.storyboard */; };
+		A0E486032854E8C700E1A97B /* EditScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E486022854E8C700E1A97B /* EditScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITests.swift; sourceTree = "<group>"; };
 		077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		077616F82852E2E600EB1E97 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A0E478F728561BD00079AAEF /* FirstScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstScreen.storyboard; sourceTree = "<group>"; };
+		A0E486022854E8C700E1A97B /* EditScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +109,11 @@
 				077616C62852E21900EB1E97 /* AppDelegate.swift */,
 				077616C82852E21900EB1E97 /* SceneDelegate.swift */,
 				077616CA2852E21900EB1E97 /* ViewController.swift */,
+				A0E486022854E8C700E1A97B /* EditScreenViewController.swift */,
 				077616CC2852E21900EB1E97 /* Main.storyboard */,
-				077616CF2852E21A00EB1E97 /* Assets.xcassets */,
 				077616D12852E21A00EB1E97 /* LaunchScreen.storyboard */,
+				A0E478F728561BD00079AAEF /* FirstScreen.storyboard */,
+				077616CF2852E21A00EB1E97 /* Assets.xcassets */,
 				077616D42852E21A00EB1E97 /* Info.plist */,
 			);
 			path = WorkItTalkIt;
@@ -236,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */,
+				A0E478F828561BD00079AAEF /* FirstScreen.storyboard in Resources */,
 				077616D32852E21A00EB1E97 /* LaunchScreen.storyboard in Resources */,
 				077616D02852E21A00EB1E97 /* Assets.xcassets in Resources */,
 				077616CE2852E21900EB1E97 /* Main.storyboard in Resources */,
@@ -274,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint #autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint autocorrect\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -285,6 +292,7 @@
 			files = (
 				077616CB2852E21900EB1E97 /* ViewController.swift in Sources */,
 				077616C72852E21900EB1E97 /* AppDelegate.swift in Sources */,
+				A0E486032854E8C700E1A97B /* EditScreenViewController.swift in Sources */,
 				077616C92852E21900EB1E97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,7 +475,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,7 +486,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -494,7 +502,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,7 +513,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
