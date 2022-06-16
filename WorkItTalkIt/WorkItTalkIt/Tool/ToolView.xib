@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ToolView" customModule="WorkItTalkIt" customModuleProvider="target">
             <connections>
                 <outlet property="tool" destination="iN0-l3-epB" id="9B3-P4-k7T"/>
-                <outlet property="toolDeleteBtn" destination="l1j-ES-Yck" id="0t9-rI-4Ga"/>
+                <outlet property="toolDeleteButton" destination="l1j-ES-Yck" id="0t9-rI-4Ga"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

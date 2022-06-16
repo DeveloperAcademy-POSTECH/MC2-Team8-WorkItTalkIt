@@ -10,14 +10,15 @@ import UIKit
 class ToolView: UIView {
 
     @IBOutlet var tool: UIView!
-    @IBOutlet var toolDeleteBtn: UIButton!
+    @IBOutlet var toolDeleteButton: UIButton!
+
     var isEditMode = false {
         didSet {
             if isEditMode == true {
-                onEditModeToolAnimation()
-                toolDeleteBtn.isHidden = false
+                playEditModeToolAnimation()
+                toolDeleteButton.isHidden = false
             } else {
-                toolDeleteBtn.isHidden = true
+                toolDeleteButton.isHidden = true
             }
         }
     }
@@ -52,9 +53,10 @@ class ToolView: UIView {
         tool.layer.shadowRadius = 10.0
     }
 
-    func onEditModeToolAnimation () {
+    func playEditModeToolAnimation () {
         let editModeToolAnimation = CAKeyframeAnimation(keyPath: "transform")
-        editModeToolAnimation.values = [NSValue(caTransform3D: CATransform3DMakeRotation(0.04, 0, 0, 1)), NSValue(caTransform3D: CATransform3DMakeRotation(-0.04, 0, 0, 1))]
+        editModeToolAnimation.values = [NSValue(caTransform3D: CATransform3DMakeRotation(0.04, 0, 0, 1)),
+                                        NSValue(caTransform3D: CATransform3DMakeRotation(-0.04, 0, 0, 1))]
         editModeToolAnimation.autoreverses = true
         editModeToolAnimation.duration = 0.15
         editModeToolAnimation.repeatCount = Float.infinity
@@ -64,10 +66,10 @@ class ToolView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setToolShadow()
-        toolDeleteBtn.isHidden = true
+        toolDeleteButton.isHidden = true
     }
 
-    @IBAction func toolDeleteBtnClick(_ sender: Any) {
+    @IBAction private func toolDeleteBtnClick(_ sender: Any) {
         // print("툴 삭제 버튼")
     }
 }
