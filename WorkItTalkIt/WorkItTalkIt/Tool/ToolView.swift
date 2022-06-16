@@ -40,6 +40,12 @@ class ToolView: UIView {
         addSubview(view)
     }
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setToolShadow()
+        toolDeleteButton.isHidden = true
+    }
+
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
@@ -61,12 +67,6 @@ class ToolView: UIView {
         editModeToolAnimation.duration = 0.15
         editModeToolAnimation.repeatCount = Float.infinity
         self.layer.add(editModeToolAnimation, forKey: "transform")
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setToolShadow()
-        toolDeleteButton.isHidden = true
     }
 
     @IBAction private func toolDeleteBtnClick(_ sender: Any) {
