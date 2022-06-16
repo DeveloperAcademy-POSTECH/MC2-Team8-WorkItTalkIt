@@ -17,6 +17,10 @@
 		077616E82852E21A00EB1E97 /* WorkItTalkItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */; };
 		077616EA2852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */; };
 		077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 077616F82852E2E600EB1E97 /* .swiftlint.yml */; };
+		7B792EB528561A20004ECEBE /* AllSizeToolView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EB428561A20004ECEBE /* AllSizeToolView.storyboard */; };
+		7B792EB728571D04004ECEBE /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EB628571D04004ECEBE /* ToolView.swift */; };
+		7B792EB928571D23004ECEBE /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EB828571D23004ECEBE /* ToolView.xib */; };
+		7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363DD2854C654007FA220 /* AllSizeToolView.swift */; };
 		0776184028582DC000EB1E97 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776183F28582DC000EB1E97 /* GridViewController.swift */; };
 		0776184228582E1B00EB1E97 /* GridSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776184128582E1B00EB1E97 /* GridSystem.swift */; };
 		0776184428582E5B00EB1E97 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776184328582E5B00EB1E97 /* Tool.swift */; };
@@ -55,6 +59,10 @@
 		077616E72852E21A00EB1E97 /* WorkItTalkItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITests.swift; sourceTree = "<group>"; };
 		077616E92852E21A00EB1E97 /* WorkItTalkItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItTalkItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		077616F82852E2E600EB1E97 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		7B792EB428561A20004ECEBE /* AllSizeToolView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AllSizeToolView.storyboard; sourceTree = "<group>"; };
+		7B792EB628571D04004ECEBE /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		7B792EB828571D23004ECEBE /* ToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
+		7B9363DD2854C654007FA220 /* AllSizeToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSizeToolView.swift; sourceTree = "<group>"; };
 		0776183F28582DC000EB1E97 /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		0776184128582E1B00EB1E97 /* GridSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSystem.swift; sourceTree = "<group>"; };
 		0776184328582E5B00EB1E97 /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
@@ -114,10 +122,13 @@
 				077616C62852E21900EB1E97 /* AppDelegate.swift */,
 				077616C82852E21900EB1E97 /* SceneDelegate.swift */,
 				077616CA2852E21900EB1E97 /* ViewController.swift */,
+				7B9363DD2854C654007FA220 /* AllSizeToolView.swift */,
 				077616CC2852E21900EB1E97 /* Main.storyboard */,
+				7B792EB428561A20004ECEBE /* AllSizeToolView.storyboard */,
 				077616CF2852E21A00EB1E97 /* Assets.xcassets */,
 				077616D12852E21A00EB1E97 /* LaunchScreen.storyboard */,
 				077616D42852E21A00EB1E97 /* Info.plist */,
+				7B615EC728546D2100E05925 /* Tool */,
 			);
 			path = WorkItTalkIt;
 			sourceTree = "<group>";
@@ -139,6 +150,15 @@
 			path = WorkItTalkItUITests;
 			sourceTree = "<group>";
 		};
+          7B615EC728546D2100E05925 /* Tool */ = {
+            isa = PBXGroup;
+            children = (
+                7B792EB628571D04004ECEBE /* ToolView.swift */,
+                7B792EB828571D23004ECEBE /* ToolView.xib */,
+            );
+            path = Tool;
+            sourceTree = "<group>";
+        };
 		0776183E28582D7E00EB1E97 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,8 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B792EB528561A20004ECEBE /* AllSizeToolView.storyboard in Resources */,
 				077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */,
 				077616D32852E21A00EB1E97 /* LaunchScreen.storyboard in Resources */,
+				7B792EB928571D23004ECEBE /* ToolView.xib in Resources */,
 				077616D02852E21A00EB1E97 /* Assets.xcassets in Resources */,
 				077616CE2852E21900EB1E97 /* Main.storyboard in Resources */,
 			);
@@ -303,9 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B792EB728571D04004ECEBE /* ToolView.swift in Sources */,
 				0776184028582DC000EB1E97 /* GridViewController.swift in Sources */,
 				077616CB2852E21900EB1E97 /* ViewController.swift in Sources */,
 				077616C72852E21900EB1E97 /* AppDelegate.swift in Sources */,
+				7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */,
 				0776184428582E5B00EB1E97 /* Tool.swift in Sources */,
 				0776184628582E8200EB1E97 /* CGPoint+.swift in Sources */,
 				077616C92852E21900EB1E97 /* SceneDelegate.swift in Sources */,
