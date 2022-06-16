@@ -50,6 +50,7 @@ class ToolView: UIView {
     var height: Int {
         return size.row * Grid.shared.unitSize + (size.row - 1) * Grid.shared.unitSpace
     }
+    var grids = [UIView]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

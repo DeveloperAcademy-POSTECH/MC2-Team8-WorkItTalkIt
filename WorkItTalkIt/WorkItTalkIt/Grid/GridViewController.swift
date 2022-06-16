@@ -85,7 +85,7 @@ class GridViewController: UIViewController {
         case .ended, .cancelled:
             let velocity = recognizer.velocity(in: view)
             let projectedPosition = CGPoint(x: attachedView.frame.origin.x, y: attachedView.frame.origin.y)
-            let nearestCornerPosition = nearestCorner(to: projectedPosition)
+            let nearestCornerPosition = nearestCorner(to: projectedPosition, attachedView: attachedView)
             let relativeInitialVelocity = CGVector(
                 dx: relativeVelocity(forVelocity: velocity.x, from: attachedView.frame.origin.x, to: nearestCornerPosition.x),
                 dy: relativeVelocity(forVelocity: velocity.y, from: attachedView.frame.origin.y, to: nearestCornerPosition.y)
@@ -96,17 +96,21 @@ class GridViewController: UIViewController {
                 attachedView.frame.origin = nearestCornerPosition
             }
             animator.startAnimation()
+
+            addPreviousPositions(attachedView: attachedView)
+            deleteSelectedPositions(attachedView: attachedView, originPosition: nearestCornerPosition)
+
         default: break
         }
     }
 
     /// Finds the position of the nearest corner to the given point.
-    private func nearestCorner(to point: CGPoint) -> CGPoint {
+    private func nearestCorner(to point: CGPoint, attachedView: ToolView) -> CGPoint {
         var minDistance = CGFloat.greatestFiniteMagnitude
         var closestPosition = CGPoint.zero
         for position in gridPositions {
             let distance = point.distance(to: position)
-            if distance < minDistance {
+            if distance < minDistance && checkGridIsMovable(attachedView: attachedView, originPosition: position) {
                 closestPosition = position
                 minDistance = distance
             }
@@ -114,10 +118,51 @@ class GridViewController: UIViewController {
         return closestPosition
     }
 
+    private func checkGridIsMovable(attachedView: ToolView, originPosition: CGPoint) -> Bool {
+        var coordinate: CGPoint
+        var movable = true
+
+        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
+
+        if !gridPositions.contains(coordinate) {
+            movable = false
+        }
+
+        return movable
+    }
+
     /// Calculates the relative velocity needed for the initial velocity of the animation.
     private func relativeVelocity(forVelocity velocity: CGFloat, from currentValue: CGFloat, to targetValue: CGFloat) -> CGFloat {
         guard currentValue - targetValue != 0 else { return 0 }
         return velocity / (targetValue - currentValue)
+    }
+
+    private func deleteSelectedPositions(attachedView: ToolView, originPosition: CGPoint) {
+        var positionIndex: Int
+        var coordinate: CGPoint
+
+        if attachedView.size == .small {
+            positionIndex = gridPositions.firstIndex(of: originPosition) ?? 0
+            attachedView.grids.append(gridPositionViews.remove(at: positionIndex))
+            print(attachedView.grids.count)
+            return
+        }
+
+        for row in 0...attachedView.size.row - 1 {
+            for col in 0...attachedView.size.col - 1 {
+                coordinate = CGPoint(x: originPosition.x + CGFloat(col * (unitSize + unitSpace)), y: originPosition.y + CGFloat(row * (unitSize + unitSpace)))
+                positionIndex = gridPositions.firstIndex(of: coordinate) ?? 0
+                attachedView.grids.append(gridPositionViews.remove(at: positionIndex))
+            }
+        }
+        print(attachedView.grids.count)
+    }
+
+    private func addPreviousPositions(attachedView: ToolView) {
+        if attachedView.grids.isEmpty { return }
+        for _ in 1...attachedView.grids.count {
+            gridPositionViews.append(attachedView.grids.removeFirst())
+        }
     }
 
     private func addGridDetailView() {
