@@ -108,9 +108,23 @@ class GridViewController: UIViewController {
     private func nearestCorner(to point: CGPoint, attachedView: ToolView) -> CGPoint {
         var minDistance = CGFloat.greatestFiniteMagnitude
         var closestPosition = CGPoint.zero
-        for position in gridPositions {
+        var toolsGridPositions: [CGPoint] {
+            var gridInnerPositions = attachedView.grids.map { $0.frame.origin }
+            for index in 0..<gridInnerPositions.count {
+                var position = gridInnerPositions[index]
+                position.x = position.x + gridView.layer.position.x - gridView.frame.width / 2
+                position.y = position.y + gridView.layer.position.y - gridView.frame.height / 2
+                gridInnerPositions[index] = position
+            }
+            return gridInnerPositions
+        }
+        var validGridPostions = [CGPoint]()
+        validGridPostions += gridPositions
+        validGridPostions += toolsGridPositions
+
+        for position in validGridPostions {
             let distance = point.distance(to: position)
-            if distance < minDistance && checkGridIsMovable(attachedView: attachedView, originPosition: position) {
+            if distance < minDistance && checkGridIsMovable(attachedView: attachedView, movedPosition: position, validGridPostions: validGridPostions) {
                 closestPosition = position
                 minDistance = distance
             }
@@ -118,18 +132,35 @@ class GridViewController: UIViewController {
         return closestPosition
     }
 
-    private func checkGridIsMovable(attachedView: ToolView, originPosition: CGPoint) -> Bool {
+    private func checkGridIsMovable(attachedView: ToolView, movedPosition: CGPoint, validGridPostions: [CGPoint]) -> Bool {
         var coordinate: CGPoint
         var movable = true
 
-        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y)
-        if !gridPositions.contains(coordinate) { movable = false }
+        for row in 0...attachedView.size.row - 1 {
+            coordinate = CGPoint(x: movedPosition.x, y: movedPosition.y + CGFloat(row * (unitSize + unitSpace)))
+            if !validGridPostions.contains(coordinate) {
+                movable = false
+                break
+            }
+            coordinate = CGPoint(x: movedPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: movedPosition.y + CGFloat(row * (unitSize + unitSpace)))
+            if !validGridPostions.contains(coordinate) {
+                movable = false
+                break
+            }
+        }
 
-        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
-        if !gridPositions.contains(coordinate) { movable = false }
-
-        coordinate = CGPoint(x: originPosition.x, y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
-        if !gridPositions.contains(coordinate) { movable = false }
+        for col in 0...attachedView.size.col - 1 {
+            coordinate = CGPoint(x: movedPosition.x + CGFloat(col * (unitSize + unitSpace)), y: movedPosition.y)
+            if !validGridPostions.contains(coordinate) {
+                movable = false
+                break
+            }
+            coordinate = CGPoint(x: movedPosition.x + CGFloat(col * (unitSize + unitSpace)), y: movedPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
+            if !validGridPostions.contains(coordinate) {
+                movable = false
+                break
+            }
+        }
 
         return movable
     }
