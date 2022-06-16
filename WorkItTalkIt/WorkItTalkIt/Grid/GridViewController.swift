@@ -189,7 +189,6 @@ class GridViewController: UIViewController {
                 attachedView.grids.append(gridPositionViews.remove(at: positionIndex))
             }
         }
-        print(attachedView.grids.count)
     }
 
     private func addPreviousPositions(attachedView: ToolView) {
