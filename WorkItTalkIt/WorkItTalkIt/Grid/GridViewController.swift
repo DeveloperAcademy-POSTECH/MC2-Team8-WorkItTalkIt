@@ -122,11 +122,14 @@ class GridViewController: UIViewController {
         var coordinate: CGPoint
         var movable = true
 
-        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
+        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y)
+        if !gridPositions.contains(coordinate) { movable = false }
 
-        if !gridPositions.contains(coordinate) {
-            movable = false
-        }
+        coordinate = CGPoint(x: originPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
+        if !gridPositions.contains(coordinate) { movable = false }
+
+        coordinate = CGPoint(x: originPosition.x, y: originPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
+        if !gridPositions.contains(coordinate) { movable = false }
 
         return movable
     }
@@ -160,7 +163,7 @@ class GridViewController: UIViewController {
 
     private func addPreviousPositions(attachedView: ToolView) {
         if attachedView.grids.isEmpty { return }
-        for _ in 1...attachedView.grids.count {
+        for _ in attachedView.grids {
             gridPositionViews.append(attachedView.grids.removeFirst())
         }
     }
