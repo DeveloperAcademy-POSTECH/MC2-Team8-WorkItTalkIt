@@ -7,10 +7,73 @@
 
 import UIKit
 
+enum ToolSize: CaseIterable {
+    case small
+    case medium
+    case large
+    case extraLong
+    case extraWide
+    case king
+
+    var row: Int {
+        switch self {
+        case .small: return 1
+        case .medium: return 1
+        case .large: return 2
+        case .extraLong: return 4
+        case .extraWide: return 2
+        case .king: return 4
+        }
+    }
+
+    var col: Int {
+        switch self {
+        case .small: return 1
+        case .medium: return 2
+        case .large: return 2
+        case .extraLong: return 2
+        case .extraWide: return 4
+        case .king: return 4
+        }
+    }
+}
+
 class ToolView: UIView {
 
     @IBOutlet var tool: UIView!
     @IBOutlet var toolDeleteButton: UIButton!
+
+    var size: ToolSize = .small
+    var width: Int {
+        return size.col * Grid.shared.unitSize + (size.col - 1) * Grid.shared.unitSpace
+    }
+    var height: Int {
+        return size.row * Grid.shared.unitSize + (size.row - 1) * Grid.shared.unitSpace
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    convenience init(size: ToolSize) {
+        self.init(frame: .zero)
+        self.size = size
+
+        layout()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func layout() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalToConstant: CGFloat(width)).isActive = true
+        self.heightAnchor.constraint(equalToConstant: CGFloat(height)).isActive = true
+    }
 
     var isEditMode = false {
         didSet {
@@ -24,25 +87,15 @@ class ToolView: UIView {
     }
     let nibName = "ToolView"
 
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-
     func commonInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = bounds
         addSubview(view)
+
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setToolShadow()
         toolDeleteButton.isHidden = true
     }
 

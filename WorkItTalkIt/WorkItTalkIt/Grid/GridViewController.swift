@@ -36,7 +36,6 @@ class GridViewController: UIViewController {
         didSet {
             for tool in tools {
                 tool.translatesAutoresizingMaskIntoConstraints = false
-                tool.backgroundColor = .blue
                 let gestureRecognizer = UIPanGestureRecognizer()
                 tool.addGestureRecognizer(gestureRecognizer)
                 gestureRecognizer.addTarget(self, action: #selector(toolPanned(recognizer:)))
@@ -55,6 +54,7 @@ class GridViewController: UIViewController {
             let tool: ToolView = {
                 return $0
             }(ToolView(size: toolSize))
+            tool.setToolShadow()
             view.addSubview(tool)
             tools.append(tool)
         }
