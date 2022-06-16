@@ -8,13 +8,13 @@
 import UIKit
 
 class ToolView: UIView {
-    
+
     @IBOutlet var tool: UIView!
     @IBOutlet var toolDeleteBtn: UIButton!
-    var onEditMode = false {
+    var isEditMode = false {
         didSet {
-            if onEditMode == true {
-                toolDeleteAnimation()
+            if isEditMode == true {
+                onEditModeToolAnimation()
                 toolDeleteBtn.isHidden = false
             } else {
                 toolDeleteBtn.isHidden = true
@@ -22,53 +22,53 @@ class ToolView: UIView {
         }
     }
     let nibName = "ToolView"
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     func commonInit() {
         guard let view = loadViewFromNib() else { return }
         view.frame = bounds
         addSubview(view)
     }
-    
+
     func loadViewFromNib() -> UIView? {
         let nib = UINib(nibName: nibName, bundle: nil)
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
-    
-    func toolShadow() {
+
+    func setToolShadow() {
         tool.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
         tool.layer.shadowColor = CGColor(red: 171 / 255, green: 171 / 255, blue: 171 / 255, alpha: 1)
         tool.layer.shadowOffset = CGSize(width: 3, height: 3)
         tool.layer.shadowOpacity = 0.3
         tool.layer.shadowRadius = 10.0
     }
-    
-    func toolDeleteAnimation() {
-        let toolDeleteAnimation = CAKeyframeAnimation(keyPath: "transform")
-        toolDeleteAnimation.values = [NSValue(caTransform3D: CATransform3DMakeRotation(0.04, 0, 0, 1)), NSValue(caTransform3D: CATransform3DMakeRotation(-0.04, 0, 0, 1))]
-        toolDeleteAnimation.autoreverses = true
-        toolDeleteAnimation.duration = 0.15
-        toolDeleteAnimation.repeatCount = Float.infinity
-        self.layer.add(toolDeleteAnimation, forKey: "transform")
+
+    func onEditModeToolAnimation () {
+        let editModeToolAnimation = CAKeyframeAnimation(keyPath: "transform")
+        editModeToolAnimation.values = [NSValue(caTransform3D: CATransform3DMakeRotation(0.04, 0, 0, 1)), NSValue(caTransform3D: CATransform3DMakeRotation(-0.04, 0, 0, 1))]
+        editModeToolAnimation.autoreverses = true
+        editModeToolAnimation.duration = 0.15
+        editModeToolAnimation.repeatCount = Float.infinity
+        self.layer.add(editModeToolAnimation, forKey: "transform")
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        toolShadow()
+        setToolShadow()
         toolDeleteBtn.isHidden = true
     }
-    
+
     @IBAction func toolDeleteBtnClick(_ sender: Any) {
-        //print("툴 삭제 버튼")
+        // print("툴 삭제 버튼")
     }
 }
 

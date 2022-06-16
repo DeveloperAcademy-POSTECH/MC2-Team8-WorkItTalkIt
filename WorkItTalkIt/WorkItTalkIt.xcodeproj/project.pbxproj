@@ -21,6 +21,8 @@
 		7B792EB728571D04004ECEBE /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B792EB628571D04004ECEBE /* ToolView.swift */; };
 		7B792EB928571D23004ECEBE /* ToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B792EB828571D23004ECEBE /* ToolView.xib */; };
 		7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9363DD2854C654007FA220 /* AllSizeToolView.swift */; };
+		7BE3D2DB2859F33900938A82 /* StorageTestView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE3D2DA2859F33900938A82 /* StorageTestView.storyboard */; };
+		7BE3D2DD2859F36600938A82 /* StorageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3D2DC2859F36600938A82 /* StorageTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		7B792EB628571D04004ECEBE /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
 		7B792EB828571D23004ECEBE /* ToolView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ToolView.xib; sourceTree = "<group>"; };
 		7B9363DD2854C654007FA220 /* AllSizeToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSizeToolView.swift; sourceTree = "<group>"; };
+		7BE3D2DA2859F33900938A82 /* StorageTestView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageTestView.storyboard; sourceTree = "<group>"; };
+		7BE3D2DC2859F36600938A82 /* StorageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,10 +120,12 @@
 				7B9363DD2854C654007FA220 /* AllSizeToolView.swift */,
 				077616CC2852E21900EB1E97 /* Main.storyboard */,
 				7B792EB428561A20004ECEBE /* AllSizeToolView.storyboard */,
+				7BE3D2DA2859F33900938A82 /* StorageTestView.storyboard */,
+				7BE3D2DC2859F36600938A82 /* StorageTestView.swift */,
 				077616CF2852E21A00EB1E97 /* Assets.xcassets */,
 				077616D12852E21A00EB1E97 /* LaunchScreen.storyboard */,
 				077616D42852E21A00EB1E97 /* Info.plist */,
-				7B615EC728546D2100E05925 /* ToolSize */,
+				7B615EC728546D2100E05925 /* Tool */,
 			);
 			path = WorkItTalkIt;
 			sourceTree = "<group>";
@@ -141,13 +147,13 @@
 			path = WorkItTalkItUITests;
 			sourceTree = "<group>";
 		};
-		7B615EC728546D2100E05925 /* ToolSize */ = {
+		7B615EC728546D2100E05925 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
 				7B792EB628571D04004ECEBE /* ToolView.swift */,
 				7B792EB828571D23004ECEBE /* ToolView.xib */,
 			);
-			path = ToolSize;
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +264,7 @@
 				7B792EB528561A20004ECEBE /* AllSizeToolView.storyboard in Resources */,
 				077616F92852E2E600EB1E97 /* .swiftlint.yml in Resources */,
 				077616D32852E21A00EB1E97 /* LaunchScreen.storyboard in Resources */,
+				7BE3D2DB2859F33900938A82 /* StorageTestView.storyboard in Resources */,
 				7B792EB928571D23004ECEBE /* ToolView.xib in Resources */,
 				077616D02852E21A00EB1E97 /* Assets.xcassets in Resources */,
 				077616CE2852E21900EB1E97 /* Main.storyboard in Resources */,
@@ -309,6 +316,7 @@
 				077616CB2852E21900EB1E97 /* ViewController.swift in Sources */,
 				077616C72852E21900EB1E97 /* AppDelegate.swift in Sources */,
 				7B9363DE2854C654007FA220 /* AllSizeToolView.swift in Sources */,
+				7BE3D2DD2859F36600938A82 /* StorageTestView.swift in Sources */,
 				077616C92852E21900EB1E97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
