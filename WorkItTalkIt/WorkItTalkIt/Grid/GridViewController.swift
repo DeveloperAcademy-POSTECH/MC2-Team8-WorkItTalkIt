@@ -28,7 +28,6 @@ class GridViewController: UIViewController {
 
     private let gridView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.backgroundColor = .yellow
         return $0
     }(UIView())
 
@@ -137,7 +136,7 @@ class GridViewController: UIViewController {
                 let unitView: UIView = {
                     $0.translatesAutoresizingMaskIntoConstraints = false
                     $0.layer.borderWidth = 1
-                    $0.layer.borderColor = UIColor.red.cgColor
+                    $0.layer.borderColor = UIColor.systemGray.cgColor
                     return $0
                 }(UIView())
 
