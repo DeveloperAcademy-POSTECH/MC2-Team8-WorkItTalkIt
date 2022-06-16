@@ -53,7 +53,6 @@ class GridViewController: UIViewController {
 
         for toolSize in ToolSize.allCases[0...2] {
             let tool: ToolView = {
-                $0.backgroundColor = .systemGreen
                 return $0
             }(ToolView(size: toolSize))
             view.addSubview(tool)
@@ -85,12 +84,8 @@ class GridViewController: UIViewController {
         case .changed:
             attachedView.frame.origin = CGPoint(x: touchPoint.x - initialOffset.x, y: touchPoint.y - initialOffset.y)
         case .ended, .cancelled:
-            let decelerationRate = UIScrollView.DecelerationRate.normal.rawValue
             let velocity = recognizer.velocity(in: view)
-            let projectedPosition = CGPoint(
-                x: attachedView.frame.origin.x + project(initialVelocity: velocity.x, decelerationRate: decelerationRate),
-                y: attachedView.frame.origin.y + project(initialVelocity: velocity.y, decelerationRate: decelerationRate)
-            )
+            let projectedPosition = CGPoint(x: attachedView.frame.origin.x, y: attachedView.frame.origin.y)
             let nearestCornerPosition = nearestCorner(to: projectedPosition)
             let relativeInitialVelocity = CGVector(
                 dx: relativeVelocity(forVelocity: velocity.x, from: attachedView.frame.origin.x, to: nearestCornerPosition.x),
@@ -106,14 +101,7 @@ class GridViewController: UIViewController {
         }
     }
 
-    /// Distance traveled after decelerating to zero velocity at a constant rate.
-    /// 일정한 속도로 0으로 감속한 후 주행한 거리.
-    private func project(initialVelocity: CGFloat, decelerationRate: CGFloat) -> CGFloat {
-        return 0// (initialVelocity / 1000) * decelerationRate / (1 - decelerationRate)
-    }
-
     /// Finds the position of the nearest corner to the given point.
-    /// 지정된 점에서 가장 가까운 모서리의 위치를 찾습니다.
     private func nearestCorner(to point: CGPoint) -> CGPoint {
         var minDistance = CGFloat.greatestFiniteMagnitude
         var closestPosition = CGPoint.zero
@@ -128,7 +116,6 @@ class GridViewController: UIViewController {
     }
 
     /// Calculates the relative velocity needed for the initial velocity of the animation.
-    /// 애니메이션의 초기 속도에 필요한 상대 속도를 계산합니다.
     private func relativeVelocity(forVelocity velocity: CGFloat, from currentValue: CGFloat, to targetValue: CGFloat) -> CGFloat {
         guard currentValue - targetValue != 0 else { return 0 }
         return velocity / (targetValue - currentValue)
