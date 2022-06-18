@@ -49,7 +49,7 @@ class GridViewController: UIViewController {
         layout()
         addGridDetailView()
 
-        for toolSize in ToolSize.allCases[0...2] {
+        for toolSize in [ToolSize.king, .medium, .small] {
             let tool: ToolView = {
                 return $0
             }(ToolView(size: toolSize))
@@ -137,28 +137,12 @@ class GridViewController: UIViewController {
         var movable = true
 
         for row in 0...attachedView.size.row - 1 {
-            coordinate = CGPoint(x: movedPosition.x, y: movedPosition.y + CGFloat(row * (unitSize + unitSpace)))
-            if !validGridPostions.contains(coordinate) {
-                movable = false
-                break
-            }
-            coordinate = CGPoint(x: movedPosition.x + CGFloat((attachedView.size.col - 1) * (unitSize + unitSpace)), y: movedPosition.y + CGFloat(row * (unitSize + unitSpace)))
-            if !validGridPostions.contains(coordinate) {
-                movable = false
-                break
-            }
-        }
-
-        for col in 0...attachedView.size.col - 1 {
-            coordinate = CGPoint(x: movedPosition.x + CGFloat(col * (unitSize + unitSpace)), y: movedPosition.y)
-            if !validGridPostions.contains(coordinate) {
-                movable = false
-                break
-            }
-            coordinate = CGPoint(x: movedPosition.x + CGFloat(col * (unitSize + unitSpace)), y: movedPosition.y + CGFloat((attachedView.size.row - 1) * (unitSize + unitSpace)))
-            if !validGridPostions.contains(coordinate) {
-                movable = false
-                break
+            for col in 0...attachedView.size.col - 1 {
+                coordinate = CGPoint(x: movedPosition.x + CGFloat(col * (unitSize + unitSpace)), y: movedPosition.y + CGFloat(row * (unitSize + unitSpace)))
+                if !validGridPostions.contains(coordinate) {
+                    movable = false
+                    break
+                }
             }
         }
 
